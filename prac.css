@@ -1,3 +1,9 @@
-h1 {
+
+.color {
     color: red;
+    font-size: 50px;
+}
+
+.fade  {
+    opacity: 0;
 }
