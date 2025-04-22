@@ -41,4 +41,19 @@ const person = {
     }
 };
 
-person.getName(); // Vivek Desale
+function registerUser(){
+    console.log(this);
+}
+
+// const register = person.getName.bind(person);    
+// register(); // Vivek Desale
+
+//Call or Invoke
+
+function registerUser(country, lang) {
+    this.getName();
+
+    console.log(`My country is ${country}, and my lang us ${lang}.`);
+}
+
+registerUser.call(person, "India", "En"); // My name is Vivek, My country is India, and my lang us Hindi.
