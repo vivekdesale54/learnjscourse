@@ -57,3 +57,29 @@
 // }
 
 // registerUser.call(person, "India", "En"); // My name is Vivek, My country is India, and my lang us Hindi.
+
+
+const user = {
+    name: "bhim",
+    sayHi() {
+        console.log(user.name);
+    }
+};
+
+const admin = {
+    name: "ullu",
+    message: "ullu hai tu",
+    sayHi(){
+        console.log(admin.message);
+    }
+}
+
+function sayHi() {
+    console.log(admin.message);
+}
+
+user.hi = sayHi;
+admin.hi = sayHi;
+
+user.sayHi();
+admin.sayHi();
