@@ -74,7 +74,7 @@
                 <h1>
                     hihat
                 </h1>
-                <button data-track = "1" class="mute hihat ">
+                <button data-track = "2" class="mute hihat ">
                     <i class="fa-solid fa-volume-xmark"></i>
                 </button>
                 <select name="hihat" id="hihat">
@@ -100,6 +100,10 @@
 
         </div>
         <button class="play-btn">Play</button>
+        <div class="tempo">
+            <input type="range" class="tempo-slider" max="300", min="20" value="150">
+            <p>tempo: <span class="tempo-nr"> 150  </span>  </p>
+        </div>
 
     </div>
     <audio class="kick-sound" src="/sounds/kick-808.wav"></audio>
