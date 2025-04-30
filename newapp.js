@@ -18,7 +18,6 @@ class Drumkit{
     }
     activePad() {
         this.classList.toggle('active'); 
-
     } 
     repeat(){
         let step = this.index % 8;
