@@ -162,3 +162,5 @@ drumKit.tempoSlider.addEventListener('input', function(e){
 drumKit.tempoSlider.addEventListener('change  ', function(e){
     drumKit.updateTempo(e);  
 });
+
+

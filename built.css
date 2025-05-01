@@ -1,41 +1,65 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: sans-serif;
 }
 
 i, 
-svg{
+svg {
     pointer-events: none;
+
 }
 
-.kick-pad,
-.snare-pad,
-.hihat-pad {
-    width: 5rem;    
+.kick-pad, .snare-pad, .hihat-pad {
+    width: 5rem;
     height: 5rem;
     margin: 1rem 0.5rem;
-    cursor: pointer;}
+    cursor: pointer;
 
-.kick-pad {
-    background: rgb(255, 85, 241)
 }
 
-.snare-pad {
-    background: rgb(208, 56, 56)
+.kick-pad{
+    background: rgb(247, 59, 59);
+}
+
+.snare-pad{
+    background: rgb(124, 122, 249);
+
 }
 
 .hihat-pad {
-    background: rgb(47, 91, 211);
+    background: rgb(194, 103, 243);
+
+}
+
+.kick-pad.active{
+    background: rgb(111, 9, 9);
+
+} 
+.snare-pad.active{
+    background: rgb(10, 8, 134);
+
+} 
+.hihat-pad.active{
+    background: rgb(84, 9, 124);
+
 } 
 
 
+.sequencer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .kick-track, 
-.snare-track, 
+.snare-track,
 .hihat-track {
     display: flex;
     align-items: center;
@@ -44,23 +68,14 @@ svg{
     margin-top: 5rem;
 }
 
-.sequencer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    
-}
-
 .kick, 
-.snare, 
+.snare,
 .hihat {
-    display: flex;;
+    display: flex;
 }
 
 .controls {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex: 1;
@@ -68,15 +83,31 @@ svg{
 }
 
 .controls button {
+    margin: 0rem 1rem;
     padding: 1rem;
     border: none;
-    background: rgb(88, 88, 88);
+    background: gray;
     color: white;
     font-size: 1rem;
-    cursor: pointer; 
+    cursor: pointer;
     transition: all 0.5s ease;
 }
 
-.mute {
-    margin: 2rem;
+.pad {
+    transition: all 0.5s ease;
 }
+
+.play{
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: rgb(207, 207, 207);
+    border: none;
+    cursor: pointer;
+}
+
+select {
+    padding: 1rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
