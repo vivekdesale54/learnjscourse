@@ -84,98 +84,129 @@
 // user.sayHi();
 // admin.sayHi();
 
-const user = {
-    name: "bhim ",
-    message: "Tu chutiya ahes",
-    gave () {
-        console.log(this.name + this.message);
-    }
-};
+// const user = {
+//     name: "bhim ",
+//     message: "Tu chutiya ahes",
+//     gave () {
+//         console.log(this.name + this.message);
+//     }
+// };
 
-function newUser(lang, country) {
-    this.gave();
-    console.log(`My country is ${country}, it is disgusting. It fights over different languages like ${lang}`);
+// function newUser(lang, country) {
+//     this.gave();
+//     console.log(`My country is ${country}, it is disgusting. It fights over different languages like ${lang}`);
+// }
+
+// const newuser = newUser.bind(user);
+
+// newuser("Hindi", "India");
+
+
+// // newUser.call(user);
+
+
+// function NewTodo(newname, completed) {
+//     this.newname = newname;
+//     this.completed = completed;
+// };
+
+// const newTodo = new NewTodo('mike', false);
+
+// console.log(newTodo);
+
+// function Enemy1(name, level, life){
+//     this.name = name;
+//     this.level = level;
+//     this.life = life;
+// };
+
+// Enemy1.prototype.getInfo = function () {
+//     console.log(this.name, this.level, this.life);
+// };
+
+// Enemy1.prototype.attack = function() {
+//     console.log(`This ${this.name} has attacked us.`);
+// };
+// Enemy1.prototype.block = function() {
+//     console.log(`This ${this.name} has blocked us.`);
+// };
+
+// function Dragon1(name, level, life, color, spell) {
+//     Enemy1.call(this, name, level, life );
+//     this.color = color;
+//     this.spell = spell;
+// };
+
+// Dragon1.prototype = Object.create(Enemy1.prototype);
+
+// Dragon1.prototype.Firebreath = function() {
+//     console.log("FIRE BREATHHH");
+// };
+
+// const Dragon2 = new Dragon1("Monster", 30, 5, "Red", "Beast");
+// console.log(Dragon2);
+
+// //Using classes
+
+// class DeadlyDragon {
+//     constructor(name, life, level) {
+//         this.name = name;
+//         this.life = life;
+//         this.level = level;
+//     }
+//     gaveInfo() {
+//        console.log(this.name, this.life, this.level) ;
+//     };
+// };
+
+// const newDragon = new DeadlyDragon("deadDragon", 25, 5);
+// const newBug  = new DeadlyDragon("BUGGY", 20, 6);
+// // console.log(newDragon);
+// // console.log(newBug);
+
+// newDragon.gaveInfo();
+// newBug.gaveInfo();
+
+// class deadlyBug extends DeadlyDragon {
+//     constructor(name, life, level, legs, dmg) {
+//         super(name, life, level);
+//         this.legs = legs;
+//         this.dmg = dmg;
+//     };
+// }
+
+// const bugMan = new deadlyBug("bugggy", 25, 23, 6, 50);
+// console.log(bugMan);
+
+
+
+function User(userName, loginCount, isLoggedOut) {
+    this.userName = userName;
+    this.loginCount = loginCount;
+    this.isLoggedOut = isLoggedOut;
+
+    return this;
 }
 
-const newuser = newUser.bind(user);
+const userOne = new User("Ohisesh", 12, 8);
+const userTwo = new User("pra ", 23, 45);
 
-newuser("Hindi", "India");
- 
+console.log(userOne);
+console.log(userTwo);
 
-// newUser.call(user);
+const listItems = document.querySelectorAll('li');
 
-
-function NewTodo(newname, completed) {
-    this.newname = newname;
-    this.completed = completed;
-};
-
-const newTodo = new NewTodo('mike', false);
-
-console.log(newTodo);
-
-function Enemy1(name, level, life){
-    this.name = name;
-    this.level = level;
-    this.life = life;
-};
-
-Enemy1.prototype.getInfo = function () {
-    console.log(this.name, this.level, this.life);
-};
-
-Enemy1.prototype.attack = function() {
-    console.log(`This ${this.name} has attacked us.`);
-};
-Enemy1.prototype.block = function() {
-    console.log(`This ${this.name} has blocked us.`);
-};
-
-function Dragon1(name, level, life, color, spell) {
-    Enemy1.call(this, name, level, life );
-    this.color = color;
-    this.spell = spell;
-};
-
-Dragon1.prototype = Object.create(Enemy1.prototype);
-
-Dragon1.prototype.Firebreath = function() {
-    console.log("FIRE BREATHHH");
-};
-
-const Dragon2 = new Dragon1("Monster", 30, 5, "Red", "Beast");
-console.log(Dragon2);
-
-//Using classes
-
-class DeadlyDragon {
-    constructor(name, life, level) {
-        this.name = name;
-        this.life = life;
-        this.level = level;
+function toggleDone(e) {
+    if (!e.target.className) {
+        e.target.className = "done";
+    } else {
+        e.target.className = ""
     }
-    gaveInfo() {
-       console.log(this.name, this.life, this.level) ;
-    };
-};
-
-const newDragon = new DeadlyDragon("deadDragon", 25, 5);
-const newBug  = new DeadlyDragon("BUGGY", 20, 6);
-// console.log(newDragon);
-// console.log(newBug);
-
-newDragon.gaveInfo();
-newBug.gaveInfo();
-
-class deadlyBug extends DeadlyDragon {
-    constructor(name, life, level, legs, dmg) {
-        super(name, life, level);
-        this.legs = legs;
-        this.dmg = dmg;
-    };
 }
+listItems.forEach(Item => {
+    Item.addEventListener('click', toggleDone)
+});
 
-const bugMan = new deadlyBug("bugggy", 25, 23, 6, 50);
-console.log(bugMan);
-
-
+const newBlock = document.createElement("li");
+newBlock.innerText = "Hello world";
+console.log(newBlock);
