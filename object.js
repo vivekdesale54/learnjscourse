@@ -1,212 +1,118 @@
-// // const hello = {
-// //     name: "bhim",
-// //     age: 30,
 
-// // };
+// const button = document.querySelector(".button");
 
-// // console.log(hello);
+// button.addEventListener('click', function() {
+//     const input = prompt("What's your timing? (Enter your timing)");
 
-// // sayHi();
+//     const time = Number(input);
 
-// // function sayHi () {
-// //     console.log("hi");
-// // }
-
-// // const user = {
-// //     name: "Vivek", 
-// // };
-
-// // const admin = {
-// //     name: "admin",
-// // }; 
-
-// // function sayHi() {
-// //     console.log(this);
-// // }
-
-// // user.name = sayHi;
-// // admin.name = sayHi;
-
-// // user.sayHi();
-// // admin.sayHi();
-
-// //Funtions -> Speacial OBJECT
-// //Bind Call Apply
-
-// const person = {
-//     name: "Vivek",
-//     last: " Desale",
-//     getName() {
-//         console.log(this.name + this.last);
+//     if (input === null) {
+//         alert("Input Cancelled");
+//     } else if (isNaN(time) || input.trim() === '') {
+//         alert("Please enter a valid number.");
+//     } else if (input <= 5) {
+//         console.log("You have PE");
+//     } else if (input > 5 <= 10) {
+//         console.log("You are normal");
+//     } else {
+//         console.log("You are an animal");
 //     }
-// };
-
-// function registerUser(){
-//     console.log(this);
-// }
-
-// // const register = person.getName.bind(person);    
-// // register(); // Vivek Desale
-
-// //Call or Invoke
-
-// function registerUser(country, lang) {
-//     this.getName();
-
-//     console.log(`My country is ${country}, and my lang us ${lang}.`);
-// }
-
-// registerUser.call(person, "India", "En"); // My name is Vivek, My country is India, and my lang us Hindi.
+// });
 
 
-// const user = {
-//     name: "bhim",
-//     sayHi() {
-//         console.log(user.name);
+// const button = document.querySelector('.check-time-btn');
+
+// // Add event listener for click event
+// button.addEventListener('click', function () {
+//     // Prompt user to enter time
+//     const input = prompt("What’s your time? (Enter a number)");
+
+//     const time = Number(input);
+
+//     if (input === null) {
+//         // User pressed Cancel
+//         alert("Input cancelled.");
+//     } else if (isNaN(time) || input.trim() === '') {
+//         alert("Please enter a valid number.");
+//     } else if (time < 5) {
+//         alert("You have PE.");
+//     } else if (time >= 5 && time <= 10) {
+//         alert("You are normal.");
+//     } else {
+//         alert("You are an animal.");
 //     }
-// };
+// });
 
-// const admin = {
-//     name: "ullu",
-//     message: "ullu hai tu",
-//     sayHi(){
-//         console.log(admin.message);
+// const newButton = document.querySelector(".button")
+
+// newButton.addEventListener('click', function () {
+//     const input = prompt("What's your timing? (Enter your timing)");
+
+//     const newtime = Number(input);  
+
+//     if (newtime <= 5) {
+//         alert("You have PE");
+//     } else if (newtime > 5 && newtime <= 10) {
+//         alert("You are normal");
+//     } else if (newtime > 10) {
+//         alert("You are an animal");
 //     }
-// }
+// });
 
-// function sayHi() {
-//     console.log(admin.message);
-// }
+//Promise syntax 
 
-// user.hi = sayHi;   
-// admin.hi = sayHi;
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log("got the user");
+//         reject(new Error("User not logged in?"));
 
-// user.sayHi();
-// admin.sayHi();
+//     }, 2000);
+// });
 
-// const user = {
-//     name: "bhim ",
-//     message: "Tu chutiya ahes",
-//     gave () {
-//         console.log(this.name + this.message);
-//     }
-// };
+// promise
+//     .then(user => {
+//         console.log(user);
+//     })
+//     .catch(err => console.log(err.message));
 
-// function newUser(lang, country) {
-//     this.gave();
-//     console.log(`My country is ${country}, it is disgusting. It fights over different languages like ${lang}`);
-// }
-
-// const newuser = newUser.bind(user);
-
-// newuser("Hindi", "India");
-
-
-// // newUser.call(user);
-
-
-// function NewTodo(newname, completed) {
-//     this.newname = newname;
-//     this.completed = completed;
-// };
-
-// const newTodo = new NewTodo('mike', false);
-
-// console.log(newTodo);
-
-// function Enemy1(name, level, life){
-//     this.name = name;
-//     this.level = level;
-//     this.life = life;
-// };
-
-// Enemy1.prototype.getInfo = function () {
-//     console.log(this.name, this.level, this.life);
-// };
-
-// Enemy1.prototype.attack = function() {
-//     console.log(`This ${this.name} has attacked us.`);
-// };
-// Enemy1.prototype.block = function() {
-//     console.log(`This ${this.name} has blocked us.`);
-// };
-
-// function Dragon1(name, level, life, color, spell) {
-//     Enemy1.call(this, name, level, life );
-//     this.color = color;
-//     this.spell = spell;
-// };
-
-// Dragon1.prototype = Object.create(Enemy1.prototype);
-
-// Dragon1.prototype.Firebreath = function() {
-//     console.log("FIRE BREATHHH");
-// };
-
-// const Dragon2 = new Dragon1("Monster", 30, 5, "Red", "Beast");
-// console.log(Dragon2);
-
-// //Using classes
-
-// class DeadlyDragon {
-//     constructor(name, life, level) {
-//         this.name = name;
-//         this.life = life;
-//         this.level = level;
-//     }
-//     gaveInfo() {
-//        console.log(this.name, this.life, this.level) ;
-//     };
-// };
-
-// const newDragon = new DeadlyDragon("deadDragon", 25, 5);
-// const newBug  = new DeadlyDragon("BUGGY", 20, 6);
-// // console.log(newDragon);
-// // console.log(newBug);
-
-// newDragon.gaveInfo();
-// newBug.gaveInfo();
-
-// class deadlyBug extends DeadlyDragon {
-//     constructor(name, life, level, legs, dmg) {
-//         super(name, life, level);
-//         this.legs = legs;
-//         this.dmg = dmg;
-//     };
-// }
-
-// const bugMan = new deadlyBug("bugggy", 25, 23, 6, 50);
-// console.log(bugMan);
-
-
-
-function User(userName, loginCount, isLoggedOut) {
-    this.userName = userName;
-    this.loginCount = loginCount;
-    this.isLoggedOut = isLoggedOut;
-
-    return this;
-}
-
-const userOne = new User("Ohisesh", 12, 8);
-const userTwo = new User("pra ", 23, 45);
-
-console.log(userOne);
-console.log(userTwo);
-
-const listItems = document.querySelectorAll('li');
-
-function toggleDone(e) {
-    if (!e.target.className) {
-        e.target.className = "done";
-    } else {
-        e.target.className = ""
-    }
-}
-listItems.forEach(Item => {
-    Item.addEventListener('click', toggleDone)
+const yt = new Promise(resolve => {
+    setTimeout(() => {
+        console.log("videos from yt");
+        resolve({ videos: [1, 2, 3, 4, 5, 6] });
+    }, 2000);
 });
 
-const newBlock = document.createElement("li");
-newBlock.innerText = "Hello world";
-console.log(newBlock);
+const fb = new Promise(resolve => {
+    setTimeout(() => {
+        console.log("this is from fb");
+        resolve({ user: "Name" });
+    }, 2000);
+});
+
+Promise.all([fb, yt])
+    .then(result => console.log(result));
+
+
+//Asyn function 
+
+async function displayUser() {
+    try {
+        const userLogged = await loginUser("vivek", 12324);
+        const videos = await getUSerVideos(loggedUser.userEmail);
+        const detail = await videosDetails(videos[0]);
+        console.log(detail);
+    } catch (err) {
+        console.log("We could not get videos");
+    }
+}
+
+const advicesbtn = document.querySelector(".advices");
+const header = document.querySelector("h1");
+
+advicesbtn.addEventListener('click', () => {
+    fetch("https://api.adviceslip.com/advice")
+        .then(result => result.json())
+        .then(data => {
+            header.innerText = data.slip.advice;
+        });
+});

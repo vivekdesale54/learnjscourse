@@ -4,3 +4,13 @@
 // }
 
 // greet()
+
+function greet(Text) {
+    console.log("What's your name, " + Text);
+}
+
+function valueName(){
+    greet("we are making love");
+}
+
+valueName();

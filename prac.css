@@ -1,9 +1,23 @@
-
+/* 
 .color {
     color: red;
     font-size: 50px;
 }
 
-.fade  {
+                                                                                                                                .fade
     opacity: 0;
+}
+.done {
+    color: darkseagreen;
+    text-decoration: line-through solid black 2px;
+
+}
+
+*/ .button {
+    background: rgb(39, 69, 178);
+    height: auto;
+    width: auto;
+    color: white;
+    font-size: 4rem;
+    border-radius: 5rem;
 }
